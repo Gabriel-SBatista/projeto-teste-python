@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Usuarios{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <button class="btn btn-primary" id="editar">Editar</button>
+
+  <form id="editar-usuario">
+    <div class="mb-3">
+      <label for="usuario" class="form-label">Nome de Usuario</label>
+      <input type="text" class="form-control" id="usuario" placeholder="Usuario" value="{{usuario.nome_usuario}}" readonly>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" value="{{usuario.email}}" readonly>
+    </div>
+
+    <button class="btn btn-primary invisivel" id="salvar">Salvar</button>
+  </form>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="{{url_for('static', filename='js/perfil.js')}}"></script>
+{% endblock %}
